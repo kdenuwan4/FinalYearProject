@@ -133,12 +133,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 <canvas id="scatter-canvas"></canvas>
 
 <div id="hero">
-  <div class="hero-badge">Final Year Project Portfolio · E/21/029</div>
+  <div class="hero-badge">Final Year Engineering Project Portfolio . E/21/029</div>
   <div id="hero-title-wrap">
     <div class="hero-title" id="hero-title-el">
       Navigation with <span>Enhanced Perception</span><br>
       in Multi-Agent Systems through<br>
-      Camera-Based <span>Visible Light Communications</span>
+      Camera-Based <span>Visible Light Communication</span>
     </div>
   </div>
   <p class="hero-sub">VLC &nbsp;·&nbsp; Overhead Perception &nbsp;·&nbsp; Autonomous Navigation &nbsp;·&nbsp; Real-Time Control</p>
@@ -365,14 +365,12 @@ function enterDemo(){
   if(isDemo)return; isDemo=true;
   triggerScatter();
   document.getElementById('hud').classList.add('visible');
-  // Swap the hint text to show ESC instructions
-  document.getElementById('start-hint').textContent = '▶ Press ESC to exit demo';
+  document.getElementById('start-hint').classList.add('hidden');
 }
 function exitDemo(){
   isDemo=false;
   document.getElementById('hud').classList.remove('visible');
-  // Swap the hint text back to the initial instructions
-  document.getElementById('start-hint').textContent = '▶ Click the 3D LED bars on the left or use WASD to begin';
+  document.getElementById('start-hint').classList.remove('hidden');
   camLerp=1; ledState=[false,false,false,false]; updateAllLEDs();
   resetScatter();
 }
